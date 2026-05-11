@@ -27,7 +27,9 @@ public class GerenciadorPistas {
 		this.totalEmergencias = 0;
 		this.gerador = new GeradorDeAvioes();
 	}
-	//adicona de 0 a 2 avioes na fila
+	/**
+	 * Adiciona de 0 a 2 avioes nas filas de pouso e decolagem a cada unidade de tempo.
+	 */
 	public void adicionarAvioes(){
 		int numeroPousar = gerador.quantidadeAvioes();
 		int numeroDecolar = gerador.quantidadeAvioes();
@@ -57,7 +59,11 @@ public class GerenciadorPistas {
 			System.out.println("chegou para decolar: " + aviaoDecolar.toString());
 		}
 	}
-	// decide se  o aviao vai pousar ou decolar
+	/**
+	 * Decide se a pista vai realizar um pouso ou uma decolagem.
+	 * Prioriza avioes em emergencia (combustivel menor ou igual a 1).
+	 * @param pista numero da pista (1 ou 2)
+	 */
 	public void decolarOuPousar(int pista) {
 		int tempoPousar = 0;
 		int tempoDecolar = 0;
@@ -121,27 +127,33 @@ public class GerenciadorPistas {
 			return;
 		}
 	}
-	// aplica o decolarOuPousar nas duas filas pra nao repetir o codigo
+	/**
+	 * Aplica o metodo decolarOuPousar nas duas pistas.
+	 */
 	public void acaoNasPistas() {
 		 decolarOuPousar(1);
 		 decolarOuPousar(2);
 	}
-	// executar o programa por 20 unidades de tempo e printa as informaçoes
+	/**
+	 * Executa a simulacao do aeroporto por 20 unidades de tempo.
+	 * A cada unidade de tempo diminui o combustivel dos avioes em espera
+	 * adiciona novos avioes realiza as acoes nas pistas e exibe as filas e os dado.
+	 */
 	public void executar() {
 		while (tempo < 20) {
 			System.out.println("___________________");
 			System.out.println("------------------");
 			System.out.println("tempo: " + tempo);
 			System.out.println("------------------");
-			// gerar avioes 
+			
 			filaPousar1.diminuirCombustivelTodos();
 			filaPousar2.diminuirCombustivelTodos();
 			adicionarAvioes();
 			System.out.println("------------------");
-			//decolar ou pousar avioes
+		
 			acaoNasPistas();
 			System.out.println("------------------");
-			// Mostrar filas
+		
 			System.out.println("Filas:");
 			System.out.println("Fila pouso pista 1:");
 		    filaPousar1.mostrarIds();
@@ -156,7 +168,7 @@ public class GerenciadorPistas {
 		    filaDecolar2.mostrarIds();
 		    System.out.println("___________________");
 		    tempo++;
-		//mostra os dados de tempo e quantidade de pousos, decolagens e emergencias
+		
 			System.out.println("Dados: ");
 			System.out.println("Numero de pousos: " + totalPousos);
 			System.out.println("Numero de decolagens: " + totalDecolagens);

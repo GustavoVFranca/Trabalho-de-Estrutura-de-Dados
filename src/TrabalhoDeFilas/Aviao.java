@@ -44,6 +44,9 @@ public class Aviao {
 	public void setTempo(int tempo) {
 		this.tempo = tempo;
 	}
+	/**
+	 * Diminui o combustivel do aviao em 1 a cada unidade de tempo ate chegar em 0
+	 */
 	public void diminuirCombustivel() {
 		if(combustivel > 0) {
 			combustivel--;

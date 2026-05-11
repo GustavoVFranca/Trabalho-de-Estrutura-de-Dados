@@ -23,7 +23,10 @@ public class ListaEncadeada {
 		novoNodo.setProx(inicio);
 		inicio = novoNodo;
 	}
-	
+	/**
+	 * Insere um aviao no final da fila.
+	 * @param aviao aviao a ser inserido
+	 */
 	public void inserirFinal(Aviao aviao) {
 		if(vazio()) {
 			inserirInicio(aviao);
@@ -56,7 +59,10 @@ public class ListaEncadeada {
 		}
 		return removido;
 	}
-	
+	/**
+	 * Remove e retorna o primeiro aviao da fila,
+	 * @return aviao removido ou null se a fila estiver vazia
+	 */
 	public Aviao removerInicio(){
 		if(vazio())	return null;
 		Aviao removido = inicio.getAviao();
@@ -98,6 +104,10 @@ public class ListaEncadeada {
 		}
 		return cont;
 	}
+	/**
+	 * Percorre a fila procurando algum aviao com combustivel menor ou igual a 1
+	 * @return aviao em emergencia ou null se nao tiver
+	 */
 	public Aviao buscarEmergencia() {
 		if(vazio()) return null;
 		Nodo aux = inicio;	
@@ -110,6 +120,10 @@ public class ListaEncadeada {
 		}
 		return null;
 	}
+	
+	/**
+	 * Diminui o combustivel de todos os avioes que estao esperando na fila
+	 */
 	public void diminuirCombustivelTodos(){
 		 Nodo aux = inicio;
 
