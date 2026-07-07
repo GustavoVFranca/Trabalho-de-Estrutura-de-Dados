@@ -3,7 +3,7 @@ package Ordenacao;
 public class OrdenacaoQuadratica {
 	 
 	public static MetricaOrdenacao bubbleSort(int[] vetor) {
-        int comparacoes = 0, trocas = 0;
+        long comparacoes = 0, trocas = 0;
         int n = vetor.length;
  
         for (int i = 0; i < n - 1; i++) {
@@ -25,8 +25,8 @@ public class OrdenacaoQuadratica {
  
 	public static MetricaOrdenacao selectionSort(int [] vetor) {
 		int n = vetor.length;
-		int comparacoes = 0;
-		int troca = 0;
+		long comparacoes = 0;
+		long troca = 0;
 		
 		for (int i = 0; i < n-1; i++) {
 			int indiceMenor = i;
@@ -48,8 +48,8 @@ public class OrdenacaoQuadratica {
 	
 	public static MetricaOrdenacao insertionSort(int [] vetor) {
 		int n = vetor.length;
-		int comparacoes = 0;
-		int troca = 0;
+		long comparacoes = 0;
+		long troca = 0;
 		
 		for(int i = 1; i < n; i++) {
 			int chave = vetor[i];

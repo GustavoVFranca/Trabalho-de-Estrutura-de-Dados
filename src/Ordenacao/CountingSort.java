@@ -4,8 +4,8 @@ public class CountingSort {
 	 
 	public static MetricaOrdenacao countingSort(int[] vetor) {
 		int n = vetor.length;
-		int comparacoes = 0;
-		int troca = 0;
+		long comparacoes = 0;
+		long troca = 0;
  
 		if (n == 0) {
 			return new MetricaOrdenacao(comparacoes, troca);

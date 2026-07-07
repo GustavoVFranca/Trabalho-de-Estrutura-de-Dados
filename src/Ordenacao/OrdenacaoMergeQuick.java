@@ -2,8 +2,8 @@ package Ordenacao;
 
 public class OrdenacaoMergeQuick {
 	 
-	private static int comparacoes;
-	private static int trocas;
+	private static long comparacoes;
+	private static long trocas;
  
 	public static MetricaOrdenacao mergeSort(int[] array) {
 		comparacoes = 0;

@@ -4,8 +4,8 @@ public class ShellSort {
 	 
 	public static MetricaOrdenacao shellSort(int[] vetor) {
 		int n = vetor.length;
-		int comparacoes = 0;
-		int troca = 0;
+		long comparacoes = 0;
+		long troca = 0;
  
 		for (int gap = n / 2; gap > 0; gap /= 2) {
 			for (int i = gap; i < n; i++) {
